@@ -6,10 +6,10 @@
 }
 
 :root {
-    --bg-clean: #fcfbfa;       /* Off-white de fundo (como a parede da clínica) */
-    --gold-dim: #c5a880;       /* Dourado fosco elegante das letras */
-    --gold-light: #e0d5c1;     /* Variação suave de dourado */
-    --text-main: #3a3530;      /* Marrom acinzentado escuro para os textos (foge do preto agressivo) */
+    --bg-clean: #fcfbfa;       
+    --gold-dim: #c5a880;       
+    --gold-light: #e0d5c1;     
+    --text-main: #3a3530;      
     --text-muted: #7c756e;
     --white: #ffffff;
 }
@@ -25,6 +25,7 @@ body {
     background-color: var(--bg-clean);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px; /* Espaço para a barra mobile não cobrir o rodapé */
 }
 
 .container {
@@ -35,9 +36,9 @@ body {
 
 /* Header Minimalista Fixo */
 header {
-    background-color: rgba(252, 251, 250, 0.95);
+    background-color: rgba(252, 251, 250, 0.98);
     backdrop-filter: blur(5px);
-    padding: 20px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,19 +49,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo h1 {
     font-family: 'Cormorant Garamond', serif;
     color: var(--text-main);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1;
 }
 
 .logo span {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     display: block;
     letter-spacing: 4px;
     color: var(--gold-dim);
@@ -68,6 +70,7 @@ header {
     margin-top: 4px;
 }
 
+/* Menu Navegação Desktop */
 nav ul {
     display: flex;
     list-style: none;
@@ -87,6 +90,11 @@ nav ul li a:hover {
     color: var(--gold-dim);
 }
 
+/* Esconder Inputs do Menu Hamburguer no Desktop */
+.menu-toggle, .menu-icon {
+    display: none;
+}
+
 /* Botões */
 .btn {
     display: inline-block;
@@ -96,7 +104,7 @@ nav ul li a:hover {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 12px 30px;
-    border-radius: 2px; /* Bordas retas trazem aspecto mais editorial/luxuoso */
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
@@ -118,7 +126,6 @@ nav ul li a:hover {
 
 .btn-primary:hover {
     background-color: #b3946b;
-    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -127,16 +134,10 @@ nav ul li a:hover {
     color: var(--white);
 }
 
-.btn-secondary:hover {
-    background-color: var(--white);
-    color: var(--text-main);
-    transform: translateY(-1px);
-}
-
-/* Hero Section (Aparência Editorial Clean) */
+/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(58, 53, 48, 0.4), rgba(58, 53, 48, 0.4)), url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1920') no-repeat center center/cover;
-    height: 75vh;
+    background: linear-gradient(rgba(58, 53, 48, 0.45), rgba(58, 53, 48, 0.45)), url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1920') no-repeat center center/cover;
+    height: 65vh;
     display: flex;
     align-items: center;
     color: var(--white);
@@ -148,7 +149,7 @@ nav ul li a:hover {
 
 .hero-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 400;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -170,7 +171,7 @@ nav ul li a:hover {
 .section-title {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 400;
     color: var(--text-main);
 }
@@ -179,29 +180,28 @@ nav ul li a:hover {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 /* Procedimentos */
 .procedimentos {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: var(--white);
 }
 
 .grid-procedimentos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .card-procedimento {
     padding: 20px 10px;
-    position: relative;
 }
 
 .card-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--gold-light);
     display: block;
     line-height: 1;
@@ -210,10 +210,9 @@ nav ul li a:hover {
 
 .card-procedimento h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 15px;
-    color: var(--text-main);
+    margin-bottom: 12px;
 }
 
 .card-procedimento p {
@@ -221,10 +220,9 @@ nav ul li a:hover {
     color: var(--text-muted);
 }
 
-/* Seção Sobre / Conceito */
+/* Seção Sobre */
 .sobre {
-    padding: 100px 0;
-    background-color: var(--bg-clean);
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -234,37 +232,31 @@ nav ul li a:hover {
 
 .sobre h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 400;
-    margin-bottom: 30px;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
 }
 
 .sobre p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 20px;
 }
 
 /* Seção Contato */
 .contato {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: #f5f1eb;
     text-align: center;
 }
 
-.contato .section-title {
-    margin-bottom: 15px;
-}
-
 .contato p {
-    color: var(--text-muted);
     margin-bottom: 40px;
 }
 
 .contato-links {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -274,29 +266,22 @@ nav ul li a:hover {
     gap: 15px;
     text-decoration: none;
     color: var(--text-main);
-    text-align: left;
-    transition: transform 0.3s;
-}
-
-.contato-item:hover {
-    transform: translateY(-2px);
 }
 
 .contato-item .icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: var(--white);
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
 
-.contato-item p {
-    margin: 0;
-    font-size: 0.9rem;
+/* Barra de Ações Fixa Mobile - Escondida no Desktop */
+.mobile-actions-bar {
+    display: none;
 }
 
 /* Rodapé */
@@ -306,32 +291,138 @@ footer {
     padding: 30px 0;
     text-align: center;
     font-size: 0.8rem;
-    letter-spacing: 0.5px;
 }
 
-/* Responsividade */
+/* =======================================================
+   MÍDIA QUERY - OTIMIZAÇÃO COMPLETA PARA CELULAR
+   ======================================================= */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
+    
+    /* Esconde o botão do cabeçalho tradicional */
+    .btn-header {
+        display: none;
     }
+
+    /* Ativando e estilizando o botão Hamburguer */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1100;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: var(--text-main);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* Esconde a lista original e transforma em gaveta lateral (menu mobile) */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: var(--bg-clean);
+        z-index: 1050;
+        padding: 100px 40px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        transition: right 0.4s ease;
+    }
+
     nav ul {
-        gap: 20px;
+        flex-direction: column;
+        gap: 35px;
     }
+
+    nav ul li a {
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: block;
+    }
+
+    /* Evento de abrir o menu quando marcar o checkbox */
+    .menu-toggle:checked ~ nav {
+        right: 0;
+    }
+
+    /* Animação do ícone hamburguer virando 'X' */
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Esconde o checkbox real da tela */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Ajustes na Seção Principal */
     .hero-content h2 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
+
     .hero-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
     }
+
     .hero-buttons .btn {
         width: 100%;
         text-align: center;
+        padding: 14px;
     }
+
+    /* Alinhamentos gerais no mobile */
     .contato-links {
         flex-direction: column;
+        align-items: flex-start;
+        max-width: 260px;
+        margin: 0 auto;
+        gap: 25px;
+    }
+
+    /* ATIVAÇÃO DA BARRA DE AÇÃO MOBILE FIXA */
+    .mobile-actions-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: var(--white);
+        box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+        z-index: 999;
+    }
+
+    .action-btn {
+        flex: 1;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        gap: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .call-btn {
+        background-color: var(--white);
+        color: var(--text-main);
+    }
+
+    .wa-btn {
+        background-color: #25d366; /* Verde comercial do WhatsApp */
+        color: var(--white);
     }
 }

@@ -1,0 +1,337 @@
+/* Reset e Variáveis de Cor (Conceito Luxo/Clean) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-clean: #fcfbfa;       /* Off-white de fundo (como a parede da clínica) */
+    --gold-dim: #c5a880;       /* Dourado fosco elegante das letras */
+    --gold-light: #e0d5c1;     /* Variação suave de dourado */
+    --text-main: #3a3530;      /* Marrom acinzentado escuro para os textos (foge do preto agressivo) */
+    --text-muted: #7c756e;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-clean);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Minimalista Fixo */
+header {
+    background-color: rgba(252, 251, 250, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0ede8;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-main);
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 0.65rem;
+    display: block;
+    letter-spacing: 4px;
+    color: var(--gold-dim);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--gold-dim);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 2px; /* Bordas retas trazem aspecto mais editorial/luxuoso */
+    transition: all 0.3s ease;
+}
+
+.btn-header {
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-dim);
+    padding: 8px 18px;
+}
+
+.btn-header:hover {
+    background-color: var(--gold-dim);
+    color: var(--white);
+}
+
+.btn-primary {
+    background-color: var(--gold-dim);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #b3946b;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+/* Hero Section (Aparência Editorial Clean) */
+.hero {
+    background: linear-gradient(rgba(58, 53, 48, 0.4), rgba(58, 53, 48, 0.4)), url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1920') no-repeat center center/cover;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 35px;
+    color: #f0f0f0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Títulos de Seção */
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--text-main);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 60px;
+}
+
+/* Procedimentos */
+.procedimentos {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.grid-procedimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.card-procedimento {
+    padding: 20px 10px;
+    position: relative;
+}
+
+.card-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.card-procedimento h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.card-procedimento p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Seção Sobre / Conceito */
+.sobre {
+    padding: 100px 0;
+    background-color: var(--bg-clean);
+    text-align: center;
+}
+
+.sobre-container {
+    max-width: 750px;
+}
+
+.sobre h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.sobre p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Seção Contato */
+.contato {
+    padding: 100px 0;
+    background-color: #f5f1eb;
+    text-align: center;
+}
+
+.contato .section-title {
+    margin-bottom: 15px;
+}
+
+.contato p {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-main);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.contato-item:hover {
+    transform: translateY(-2px);
+}
+
+.contato-item .icon {
+    font-size: 2rem;
+    background-color: var(--white);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.contato-item p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--text-main);
+    color: #a8a098;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav ul {
+        gap: 20px;
+    }
+    .hero-content h2 {
+        font-size: 2.3rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .contato-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
